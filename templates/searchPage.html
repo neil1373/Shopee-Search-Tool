@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <img src='static/images/Shopee_Logo.png' style='height: 160px; width: auto;'>
+    <h3>Search Product in SHOPEE</h3>
+    <div class="search"> 
+      <form onsubmit="window.location = '/keyword='+search.value+'&item_num='+item_num.value+'&locations='+location.value+'&ratingFilter='+ratingFilter.value; return false;">
+
+        <h6>Maximum Search Results:
+          <select class="selectpicker" name="item_num">
+            {%for i in range(1, 11)%}
+            <option value="{{i*10}}">{{i*10}}</option>
+            {%endfor%}
+          </select>
+        </h6>
+
+        <h6>Location:
+          <select class="selectpicker" name="location">
+            <option value="Taiwan">Taiwan</option>
+            <option value="Abroad">Abroad</option>
+          </select>
+        </h6>
+
+        <h6>RatingFilter:
+          <select class="selectpicker" name="ratingFilter">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </h6>
+
+        <input id="search" placeholder="Enter keyword" type="search" name="search"></input>
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+      </form>
+
+    </div> 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
